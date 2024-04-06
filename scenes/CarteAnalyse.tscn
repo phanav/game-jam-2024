@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cyv4dltlbsn8b"]
+[gd_scene load_steps=3 format=3 uid="uid://bft2v6yyntbjx"]
 
 [ext_resource type="Script" path="res://scenes/CarteAnalyse.gd" id="1_8cngi"]
 [ext_resource type="Texture2D" uid="uid://7le8m08buqw6" path="res://art/cartes_art/Analyse.svg" id="2_ecjxg"]

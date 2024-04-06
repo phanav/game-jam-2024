@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgf7feem3fyiw"]
 
 [ext_resource type="Script" path="res://scenes/Carte.gd" id="1_pgb1n"]
-[ext_resource type="PackedScene" uid="uid://cyv4dltlbsn8b" path="res://scenes/CarteAnalyse.tscn" id="2_jf1xb"]
-[ext_resource type="PackedScene" uid="uid://c0krbnlysowub" path="res://scenes/CarteUnitaire.tscn" id="3_oovo4"]
-[ext_resource type="PackedScene" uid="uid://bjgn1wi0dkvd4" path="res://scenes/CarteBombe.tscn" id="4_j0daq"]
+[ext_resource type="PackedScene" path="res://scenes/CarteAnalyse.tscn" id="2_jf1xb"]
+[ext_resource type="PackedScene" path="res://scenes/CarteUnitaire.tscn" id="3_oovo4"]
+[ext_resource type="PackedScene" uid="uid://bo0ijp1h2ehgo" path="res://scenes/CarteBombe.tscn" id="4_j0daq"]
 
 [node name="Carte" type="Control"]
 layout_mode = 3

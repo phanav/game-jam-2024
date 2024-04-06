@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://c0krbnlysowub"]
+[gd_scene load_steps=6 format=3 uid="uid://4dgkeg6e70cl"]
 
 [ext_resource type="Script" path="res://scenes/CarteUnitaire.gd" id="1_cf1xu"]
 [ext_resource type="Texture2D" uid="uid://brjoscxqthawj" path="res://art/cartes_art/Immunotherapie.svg" id="1_miw8c"]
