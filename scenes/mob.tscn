@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cclr35o440n06"]
+[gd_scene load_steps=9 format=3 uid="uid://cujryyeuonm74"]
 
 [ext_resource type="Texture2D" uid="uid://cf1e40q4m2flf" path="res://art/exemples_art/enemyFlyingAlt_1.png" id="1_8ebtv"]
 [ext_resource type="Texture2D" uid="uid://bu571gwdgwupy" path="res://art/exemples_art/enemyFlyingAlt_2.png" id="2_0km08"]

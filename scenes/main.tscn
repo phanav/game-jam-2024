@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cvxx3tmyt42jf"]
 
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="1_eanxq"]
-[ext_resource type="PackedScene" uid="uid://cclr35o440n06" path="res://scenes/mob.tscn" id="2_63ahq"]
+[ext_resource type="PackedScene" uid="uid://cujryyeuonm74" path="res://scenes/mob.tscn" id="2_63ahq"]
 [ext_resource type="PackedScene" uid="uid://cgf7feem3fyiw" path="res://scenes/carte.tscn" id="2_kg18q"]
-[ext_resource type="PackedScene" uid="uid://dg2d2aouot8ye" path="res://scenes/cellule.tscn" id="3_idd7r"]
+[ext_resource type="PackedScene" uid="uid://dd554e86wa4bs" path="res://scenes/cellule.tscn" id="3_idd7r"]
 
 [node name="Main" type="Node"]
 
@@ -43,3 +43,9 @@ position = Vector2(200, 100)
 
 [node name="Cellule" parent="." instance=ExtResource("3_idd7r")]
 position = Vector2(950, 200)
+
+[node name="Cellule2" parent="." instance=ExtResource("3_idd7r")]
+position = Vector2(100, 580)
+
+[node name="Cellule3" parent="." instance=ExtResource("3_idd7r")]
+position = Vector2(1100, 550)
