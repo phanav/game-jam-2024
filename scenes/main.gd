@@ -5,6 +5,7 @@ extends Node
 var healthy_cells = []
 var cancer_cells = []
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
