@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgf7feem3fyiw"]
 
 [ext_resource type="Script" path="res://scenes/Carte.gd" id="1_pgb1n"]
-[ext_resource type="Texture2D" uid="uid://ci3f0ar37g7x3" path="res://art/cartes_art/Analyse.svg" id="2_chono"]
-[ext_resource type="Texture2D" uid="uid://crg3f8c8js1lq" path="res://art/cartes_art/Chimiotherapie.svg" id="3_j3fc3"]
-[ext_resource type="Texture2D" uid="uid://d1hae2562ik7x" path="res://art/cartes_art/Chirurgie.svg" id="4_ouwru"]
+[ext_resource type="PackedScene" uid="uid://cyv4dltlbsn8b" path="res://scenes/CarteAnalyse.tscn" id="2_jf1xb"]
+[ext_resource type="PackedScene" uid="uid://c0krbnlysowub" path="res://scenes/CarteUnitaire.tscn" id="3_oovo4"]
+[ext_resource type="PackedScene" uid="uid://bjgn1wi0dkvd4" path="res://scenes/CarteBombe.tscn" id="4_j0daq"]
 
 [node name="Carte" type="Control"]
 layout_mode = 3
@@ -12,23 +12,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_pgb1n")
 
-[node name="TextureButton" type="TextureButton" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.12, 0.12)
-texture_normal = ExtResource("2_chono")
+[node name="CarteAnalyse" parent="." instance=ExtResource("2_jf1xb")]
 
-[node name="TextureButton2" type="TextureButton" parent="."]
+[node name="CarteUnitaire" parent="." instance=ExtResource("3_oovo4")]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.12, 0.12)
-texture_normal = ExtResource("3_j3fc3")
 
-[node name="TextureButton3" type="TextureButton" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(0.12, 0.12)
-texture_normal = ExtResource("4_ouwru")
+[node name="CarteBombe" parent="." instance=ExtResource("4_j0daq")]

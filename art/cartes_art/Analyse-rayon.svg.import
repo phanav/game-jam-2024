@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co00hni54of42"
-path="res://.godot/imported/Chimiotherapie.svg-7a367b1a83421fc0247b68c1730937ac.ctex"
+uid="uid://q6lw7x4cvukb"
+path="res://.godot/imported/Analyse-rayon.svg-3a2375c0c35644fe6980169099b5cca6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cartes_art/Chimiotherapie.svg"
-dest_files=["res://.godot/imported/Chimiotherapie.svg-7a367b1a83421fc0247b68c1730937ac.ctex"]
+source_file="res://art/cartes_art/Analyse-rayon.svg"
+dest_files=["res://.godot/imported/Analyse-rayon.svg-3a2375c0c35644fe6980169099b5cca6.ctex"]
 
 [params]
 

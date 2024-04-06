@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0krbnlysowub"]
+
+[ext_resource type="Script" path="res://scenes/CarteUnitaire.gd" id="1_cf1xu"]
+[ext_resource type="Texture2D" uid="uid://brjoscxqthawj" path="res://art/cartes_art/Immunotherapie.svg" id="1_miw8c"]
+[ext_resource type="Texture2D" uid="uid://b82xfy4osxgpr" path="res://art/cartes_art/Chirurgie.svg" id="1_nuese"]
+[ext_resource type="Texture2D" uid="uid://ykvulavcf2yu" path="res://art/cartes_art/Radiotherapie.svg" id="2_7nuvj"]
+[ext_resource type="Texture2D" uid="uid://biwedj0pij8v1" path="res://art/cartes_art/TherapiesCiblees.svg" id="3_ia1fq"]
+
+[node name="CarteUnitaire" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_cf1xu")
+
+[node name="Immunotherapie" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_miw8c")
+
+[node name="Radiotherapie" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_7nuvj")
+
+[node name="TherapieCiblee" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("3_ia1fq")
+
+[node name="Chirurgie" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_nuese")

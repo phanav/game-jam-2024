@@ -1,4 +1,4 @@
-#CarteBombe correspond à la Chimiothérapie
+#CarteBombe.gd correspond à la Chimiothérapie
 
 extends "res://scenes/Carte.gd"
 
@@ -17,3 +17,5 @@ func _process(delta):
 func _utiliser():
 	# Logique spécifique pour une carte Unitaire
 	pass
+
+

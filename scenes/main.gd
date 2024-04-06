@@ -1,4 +1,6 @@
+# main.gd
 extends Node
+
 
 var healthy_cells = []
 var cancer_cells = []
@@ -8,7 +10,8 @@ func _ready():
 	randomize()
 	spawn_cells(10, "cancer")
 	spawn_cells(100, "healthy")
-
+	
+	
 	print(len(healthy_cells))
 	print(len(cancer_cells))
 
@@ -27,3 +30,5 @@ func spawn_cells(count, type):
 			cancer_cells.append(cell)
 		else:
 			healthy_cells.append(cell)
+
+
