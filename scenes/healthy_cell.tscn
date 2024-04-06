@@ -18,11 +18,10 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akhyn"]
-radius = 38.0
-height = 76.0
+radius = 12.0
+height = 30.0
 
-[node name="Mob" type="RigidBody2D"]
-collision_mask = 0
+[node name="HealthyCell" type="RigidBody2D"]
 gravity_scale = 0.0
 metadata/_edit_group_ = true
 
