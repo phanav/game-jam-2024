@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvxx3tmyt42jf"]
+[gd_scene load_steps=15 format=3 uid="uid://cvxx3tmyt42jf"]
 
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="1_eanxq"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_kbus1"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://deimy7gll2p3y" path="res://art/cartes_art/Chimiotherapie-rayon.svg" id="8_px430"]
 [ext_resource type="Texture2D" uid="uid://bfalxacs81lqh" path="res://art/Jeu/SVG-curseur-viseur/Cercle.svg" id="10_sowf5"]
 [ext_resource type="Script" path="res://scenes/Carte3.gd" id="11_hknq2"]
+[ext_resource type="PackedScene" uid="uid://dv11h1u5bygkx" path="res://components/health_bar.tscn" id="13_0kdhp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xc30g"]
 radius = 18.1108
@@ -80,8 +81,18 @@ texture = ExtResource("10_sowf5")
 
 [node name="CancelCellSpawnTimer" type="Timer" parent="Camera2D"]
 
+[node name="HealthBar" parent="." instance=ExtResource("13_0kdhp")]
+
+[node name="HealthyCellDeathTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="CancerCellSpawnTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="body_shape_entered" from="TargetArea" to="." method="_on_target_area_body_shape_entered"]
 [connection signal="body_shape_exited" from="TargetArea" to="." method="_on_target_area_body_shape_exited"]
 [connection signal="pressed" from="Camera2D/Carte1" to="Camera2D/Carte1" method="_on_pressed"]
 [connection signal="timeout" from="Camera2D/HealthyCellDeathTimer" to="." method="_on_healthy_cell_death_timer_timeout"]
 [connection signal="timeout" from="Camera2D/CancelCellSpawnTimer" to="." method="_on_cancel_cell_spawn_timer_timeout"]
+[connection signal="timeout" from="HealthyCellDeathTimer" to="." method="_on_healthy_cell_death_timer_timeout"]
+[connection signal="timeout" from="CancerCellSpawnTimer" to="." method="_on_cancer_cell_spawn_timer_timeout"]
