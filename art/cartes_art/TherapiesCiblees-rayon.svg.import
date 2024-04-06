@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ykvulavcf2yu"
-path="res://.godot/imported/RadioTherapie.svg-94bfea2eebab9c17528c0a5a47442e20.ctex"
+uid="uid://cmugvn85xtjm4"
+path="res://.godot/imported/TherapiesCiblees-rayon.svg-420dce4ff18ebab93fc75c80265d6217.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cartes_art/RadioTherapie.svg"
-dest_files=["res://.godot/imported/RadioTherapie.svg-94bfea2eebab9c17528c0a5a47442e20.ctex"]
+source_file="res://art/cartes_art/TherapiesCiblees-rayon.svg"
+dest_files=["res://.godot/imported/TherapiesCiblees-rayon.svg-420dce4ff18ebab93fc75c80265d6217.ctex"]
 
 [params]
 
