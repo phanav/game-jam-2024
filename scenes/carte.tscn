@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cgf7feem3fyiw"]
 
 [ext_resource type="Script" path="res://scenes/Carte.gd" id="1_pgb1n"]
-[ext_resource type="Texture2D" uid="uid://brpap3b4e72fg" path="res://art/analyse_carte.png" id="2_50nxy"]
-[ext_resource type="Texture2D" uid="uid://clorjrtsgl8vn" path="res://art/bombe_carte.png" id="3_aoduj"]
-[ext_resource type="Texture2D" uid="uid://d3nmnw3j3hmsg" path="res://art/chimiotherapie_carte.png" id="4_qohpw"]
+[ext_resource type="Texture2D" uid="uid://ci3f0ar37g7x3" path="res://art/cartes_art/Analyse.svg" id="2_chono"]
+[ext_resource type="Texture2D" uid="uid://crg3f8c8js1lq" path="res://art/cartes_art/Chimiotherapie.svg" id="3_j3fc3"]
+[ext_resource type="Texture2D" uid="uid://d1hae2562ik7x" path="res://art/cartes_art/Chirurgie.svg" id="4_ouwru"]
 
 [node name="Carte" type="Control"]
 layout_mode = 3
@@ -17,18 +17,18 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.12, 0.12)
-texture_normal = ExtResource("2_50nxy")
+texture_normal = ExtResource("2_chono")
 
 [node name="TextureButton2" type="TextureButton" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.12, 0.12)
-texture_normal = ExtResource("3_aoduj")
+texture_normal = ExtResource("3_j3fc3")
 
 [node name="TextureButton3" type="TextureButton" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.12, 0.12)
-texture_normal = ExtResource("4_qohpw")
+texture_normal = ExtResource("4_ouwru")
