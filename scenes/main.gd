@@ -4,6 +4,7 @@ var healthy_cells = []
 var cancer_cells = []
 var target_radius = 20
 var cancer_spawning_speed = 2
+var target_cell_rids = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -58,3 +59,28 @@ func _on_cancer_cell_spawn_timer_timeout():
 	cell.global_position = Vector2(randi() % get_viewport().size.x, randi() % get_viewport().size.y)
 	add_child(cell)
 	cancer_cells.append(cell)
+
+
+func _on_target_area_target_body_entered(args):
+	#pass # Replace with function body.
+	print('main enter ', args)
+
+
+func _on_target_area_target_body_exited(args):
+	#pass # Replace with function body.
+	print('main exit ', args)
+
+
+func _on_target_area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+	#pass # Replace with function body.
+	# print(body.name, ' main enter ; ', body_rid, body.owner)
+	# print(body_rid, body, body_shape_index, local_shape_index)
+	target_cell_rids.append(body_rid)
+
+
+func _on_target_area_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):
+	#pass # Replace with function body.
+	# print(body.name, ' main exit ; ', body_rid, body)
+	# print(body_rid, body, body_shape_index, local_shape_index)
+	if len(target_cell_rids) > 0:
+		target_cell_rids.erase(body_rid)
