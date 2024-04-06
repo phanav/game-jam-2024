@@ -2,6 +2,10 @@ extends Node
 
 var healthy_cells = []
 var cancer_cells = []
+
+var healthy_cell_rids = []
+var cancer_cell_rids = []
+
 var target_radius = 20
 var cancer_spawning_speed = 2
 var target_cell_rids = []
@@ -43,22 +47,27 @@ func spawn_cells(count, type):
 		add_child(cell)
 		if type == "cancer":
 			cancer_cells.append(cell)
+			cancer_cell_rids.append(cell.get_rid())
 		else:
 			healthy_cells.append(cell)
+			healthy_cell_rids.append(cell.get_rid())
 
 func _on_TargetArea_area_entered(area):
 	print("Area entered: " + area.name)
 
 # mort des cellules saines
 func _on_healthy_cell_death_timer_timeout():
-	healthy_cells.remove_at(randi() % healthy_cells.size())
+	var index = randi() % healthy_cells.size()
+	healthy_cells.remove_at(index)
+	healthy_cell_rids.remove_at(index)
 
 # apparition des cellules cancers
 func _on_cancer_cell_spawn_timer_timeout():
-	var cell = load("res://scenes/cancer_cell.tscn").instantiate()
+	var cell = preload("res://scenes/cancer_cell.tscn").instantiate()
 	cell.global_position = Vector2(randi() % get_viewport().size.x, randi() % get_viewport().size.y)
 	add_child(cell)
 	cancer_cells.append(cell)
+	cancer_cell_rids.append(cell.get_rid())
 
 
 func _on_target_area_target_body_entered(args):
@@ -76,6 +85,8 @@ func _on_target_area_body_shape_entered(body_rid, body, body_shape_index, local_
 	# print(body.name, ' main enter ; ', body_rid, body.owner)
 	# print(body_rid, body, body_shape_index, local_shape_index)
 	target_cell_rids.append(body_rid)
+	print(healthy_cell_rids.find(body_rid))
+	print(cancer_cell_rids.find(body_rid))
 
 
 func _on_target_area_body_shape_exited(body_rid, body, body_shape_index, local_shape_index):

@@ -5,11 +5,11 @@ signal target_body_exited
 @export var radius : float=10:
 	set(value):
 		radius = value
-		queue_redraw()
+		#queue_redraw()
 
-func _draw():
-	# draw_circle(Vector2(0, 0), 10, Color.ORANGE)
-	draw_arc(Vector2(0, 0), radius, 0, TAU, 100, Color.ORANGE)
+#func _draw():
+	## draw_circle(Vector2(0, 0), 10, Color.ORANGE)
+	#draw_arc(Vector2(0, 0), radius, 0, TAU, 100, Color.ORANGE)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

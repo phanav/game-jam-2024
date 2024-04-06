@@ -1,19 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://cvxx3tmyt42jf"]
+[gd_scene load_steps=9 format=3 uid="uid://cvxx3tmyt42jf"]
 
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="1_eanxq"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_kbus1"]
 [ext_resource type="PackedScene" uid="uid://cgf7feem3fyiw" path="res://scenes/carte.tscn" id="2_kg18q"]
 [ext_resource type="Script" path="res://scenes/Control.gd" id="4_nikpt"]
-[ext_resource type="Texture2D" uid="uid://uutynn12madf" path="res://art/circle-svgrepo-com.svg" id="5_g6dgy"]
 [ext_resource type="Script" path="res://scenes/TargetArea.gd" id="5_l6k61"]
-[ext_resource type="Script" path="res://scenes/TargetRigidBody.gd" id="6_2h5ug"]
+[ext_resource type="Texture2D" uid="uid://coaq1gpdx0o43" path="res://Jeu/SVG-curseur-viseur/Cercle.svg" id="6_04v1f"]
 [ext_resource type="PackedScene" uid="uid://2ivefrhegif8" path="res://components/health_bar.tscn" id="8_gicm6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_bmhvb"]
 radius = 18.1108
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_wxfgm"]
-radius = 20.5913
 
 [node name="Main" type="Node"]
 script = ExtResource("1_kbus1")
@@ -72,20 +68,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_nikpt")
 
-[node name="TargetRigidBody" type="RigidBody2D" parent="Camera2D"]
-mass = 0.01
-gravity_scale = 0.0
-script = ExtResource("6_2h5ug")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/TargetRigidBody"]
-shape = SubResource("CircleShape2D_wxfgm")
-
-[node name="Sprite2D" type="Sprite2D" parent="Camera2D/TargetRigidBody"]
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("5_g6dgy")
-
 [node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_04v1f")
 
 [node name="HealthBar" parent="." instance=ExtResource("8_gicm6")]
 
@@ -103,6 +88,5 @@ autostart = true
 [connection signal="body_shape_exited" from="TargetArea" to="." method="_on_target_area_body_shape_exited"]
 [connection signal="target_body_entered" from="TargetArea" to="." method="_on_target_area_target_body_entered"]
 [connection signal="target_body_exited" from="TargetArea" to="." method="_on_target_area_target_body_exited"]
-[connection signal="body_shape_entered" from="Camera2D/TargetRigidBody" to="Camera2D/TargetRigidBody" method="_on_body_shape_entered"]
 [connection signal="timeout" from="HealthyCellDeathTimer" to="." method="_on_healthy_cell_death_timer_timeout"]
 [connection signal="timeout" from="CancerCellSpawnTimer" to="." method="_on_cancer_cell_spawn_timer_timeout"]
