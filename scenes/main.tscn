@@ -82,5 +82,6 @@ texture = ExtResource("10_sowf5")
 
 [connection signal="body_shape_entered" from="TargetArea" to="." method="_on_target_area_body_shape_entered"]
 [connection signal="body_shape_exited" from="TargetArea" to="." method="_on_target_area_body_shape_exited"]
+[connection signal="pressed" from="Camera2D/Carte1" to="Camera2D/Carte1" method="_on_pressed"]
 [connection signal="timeout" from="Camera2D/HealthyCellDeathTimer" to="." method="_on_healthy_cell_death_timer_timeout"]
 [connection signal="timeout" from="Camera2D/CancelCellSpawnTimer" to="." method="_on_cancel_cell_spawn_timer_timeout"]
