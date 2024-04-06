@@ -5,6 +5,24 @@ extends Node
 var healthy_cells = []
 var cancer_cells = []
 
+var commandement = ["all", "shield", "precoce", "mutateStar", "timed", "show"]
+# all = efficace contre toutes les cellules
+# shield = cellules qui échappent à la mort
+# precoce = cellules aux stades précoces
+# mutateStar = cellules qui mutent
+# timed = traitement efficace contre les cellules qui se sont bient déveoppées
+# show = affiche l'états des cellules
+var therapie = ["Chimiotherapie", "Immunotherapie", "Radiotherapie", "TherapieCiblee", "Chirurgie", "Analyse"]
+# Chimiotherapie -> all
+# Immunotherapie -> shield
+# Radiotherapie -> precoce
+# TherapieCiblee -> mutateStar
+# Chirurgie -> timed
+# Analyse -> show
+
+
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
@@ -30,5 +48,7 @@ func spawn_cells(count, type):
 			cancer_cells.append(cell)
 		else:
 			healthy_cells.append(cell)
+
+
 
 

@@ -1,10 +1,6 @@
-# Carte.gd
+# Carte1.gd
 
-extends Control
-
-var nom
-var description
-var texture
+extends TextureButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
