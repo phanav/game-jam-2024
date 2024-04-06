@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scenes/CarteUnitaire.gd" id="1_cf1xu"]
 [ext_resource type="Texture2D" uid="uid://brjoscxqthawj" path="res://art/cartes_art/Immunotherapie.svg" id="1_miw8c"]
 [ext_resource type="Texture2D" uid="uid://b82xfy4osxgpr" path="res://art/cartes_art/Chirurgie.svg" id="1_nuese"]
-[ext_resource type="Texture2D" uid="uid://ykvulavcf2yu" path="res://art/cartes_art/Radiotherapie.svg" id="2_7nuvj"]
+[ext_resource type="Texture2D" uid="uid://ykvulavcf2yu" path="res://art/cartes_art/RadioTherapie.svg" id="2_7nuvj"]
 [ext_resource type="Texture2D" uid="uid://biwedj0pij8v1" path="res://art/cartes_art/TherapiesCiblees.svg" id="3_ia1fq"]
 
 [node name="CarteUnitaire" type="Control"]
