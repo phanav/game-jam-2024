@@ -1,6 +1,6 @@
 extends Area2D
-signal target_body_entered
-signal target_body_exited
+#signal target_body_entered
+#signal target_body_exited
 
 @export var radius : float=10:
 	set(value):

@@ -81,12 +81,7 @@ autostart = true
 [node name="CancerCellSpawnTimer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="area_entered" from="TargetArea" to="TargetArea" method="_on_area_entered"]
-[connection signal="area_shape_entered" from="TargetArea" to="TargetArea" method="_on_area_shape_entered"]
-[connection signal="body_entered" from="TargetArea" to="." method="_on_target_area_body_entered"]
 [connection signal="body_shape_entered" from="TargetArea" to="." method="_on_target_area_body_shape_entered"]
 [connection signal="body_shape_exited" from="TargetArea" to="." method="_on_target_area_body_shape_exited"]
-[connection signal="target_body_entered" from="TargetArea" to="." method="_on_target_area_target_body_entered"]
-[connection signal="target_body_exited" from="TargetArea" to="." method="_on_target_area_target_body_exited"]
 [connection signal="timeout" from="HealthyCellDeathTimer" to="." method="_on_healthy_cell_death_timer_timeout"]
 [connection signal="timeout" from="CancerCellSpawnTimer" to="." method="_on_cancer_cell_spawn_timer_timeout"]
