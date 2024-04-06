@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90.19 90">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f99;
+      }
+
+      .cls-1, .cls-2 {
+        stroke-width: 0px;
+      }
+
+      .cls-3 {
+        fill: #000;
+        font-family: MyriadPro-Regular, 'Myriad Pro';
+        font-size: 12px;
+      }
+
+      .cls-2 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <rect class="cls-2" width="90.19" height="45.06"/>
+  <rect class="cls-1" y="45.06" width="90.19" height="45.06"/>
+  <text class="cls-3" transform="translate(24.41 71.17)"><tspan x="0" y="0">#FF9999</tspan></text>
+  <text class="cls-3" transform="translate(22.55 26.14)"><tspan x="0" y="0">#FFFFFF</tspan></text>
+</svg>
