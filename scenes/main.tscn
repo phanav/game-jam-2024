@@ -1,13 +1,29 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvxx3tmyt42jf"]
+[gd_scene load_steps=10 format=3 uid="uid://cvxx3tmyt42jf"]
 
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="1_eanxq"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_kbus1"]
-[ext_resource type="PackedScene" uid="uid://cujryyeuonm74" path="res://scenes/mob.tscn" id="2_63ahq"]
 [ext_resource type="PackedScene" uid="uid://cgf7feem3fyiw" path="res://scenes/carte.tscn" id="2_kg18q"]
-[ext_resource type="PackedScene" uid="uid://dd554e86wa4bs" path="res://scenes/cellule.tscn" id="3_idd7r"]
+[ext_resource type="Script" path="res://scenes/Control.gd" id="4_nikpt"]
+[ext_resource type="Texture2D" uid="uid://uutynn12madf" path="res://art/circle-svgrepo-com.svg" id="5_g6dgy"]
+[ext_resource type="Script" path="res://scenes/TargetArea.gd" id="5_l6k61"]
+[ext_resource type="Script" path="res://scenes/TargetRigidBody.gd" id="6_2h5ug"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bmhvb"]
+radius = 18.1108
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wxfgm"]
+radius = 20.5913
 
 [node name="Main" type="Node"]
 script = ExtResource("1_kbus1")
+
+[node name="TargetArea" type="Area2D" parent="."]
+position = Vector2(550, 350)
+script = ExtResource("5_l6k61")
+metadata/_edit_group_ = true
+
+[node name="TargetCollisionShape" type="CollisionShape2D" parent="TargetArea"]
+shape = SubResource("CircleShape2D_bmhvb")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 5
@@ -18,6 +34,7 @@ drag_top_margin = 0.0
 drag_right_margin = 0.0
 drag_bottom_margin = 0.0
 script = ExtResource("1_eanxq")
+metadata/_edit_group_ = true
 
 [node name="Carte" parent="Camera2D" instance=ExtResource("2_kg18q")]
 offset_left = -25.0
@@ -39,17 +56,38 @@ offset_top = 79.0
 offset_right = 51.0
 offset_bottom = 119.0
 
-[node name="Mob" parent="." instance=ExtResource("2_63ahq")]
-position = Vector2(550, 350)
+[node name="Target" type="Control" parent="Camera2D"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_nikpt")
 
-[node name="Mob2" parent="." instance=ExtResource("2_63ahq")]
-position = Vector2(200, 100)
+[node name="TargetRigidBody" type="RigidBody2D" parent="Camera2D"]
+mass = 0.01
+gravity_scale = 0.0
+script = ExtResource("6_2h5ug")
+metadata/_edit_group_ = true
 
-[node name="Cellule" parent="." instance=ExtResource("3_idd7r")]
-position = Vector2(950, 200)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/TargetRigidBody"]
+shape = SubResource("CircleShape2D_wxfgm")
 
-[node name="Cellule2" parent="." instance=ExtResource("3_idd7r")]
-position = Vector2(100, 580)
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D/TargetRigidBody"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_g6dgy")
 
-[node name="Cellule3" parent="." instance=ExtResource("3_idd7r")]
-position = Vector2(1100, 550)
+[node name="Sprite2D" type="Sprite2D" parent="Camera2D"]
+
+[connection signal="area_entered" from="TargetArea" to="TargetArea" method="_on_area_entered"]
+[connection signal="area_shape_entered" from="TargetArea" to="TargetArea" method="_on_area_shape_entered"]
+[connection signal="body_entered" from="TargetArea" to="." method="_on_target_area_body_entered"]
+[connection signal="body_shape_entered" from="TargetArea" to="TargetArea" method="_on_body_shape_entered"]
+[connection signal="body_shape_entered" from="Camera2D/TargetRigidBody" to="Camera2D/TargetRigidBody" method="_on_body_shape_entered"]
