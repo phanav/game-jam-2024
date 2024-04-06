@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvxx3tmyt42jf"]
+[gd_scene load_steps=14 format=3 uid="uid://cvxx3tmyt42jf"]
 
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="1_eanxq"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_kbus1"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://co00hni54of42" path="res://art/cartes_art/Chimiotherapie.svg" id="7_n40il"]
 [ext_resource type="Texture2D" uid="uid://deimy7gll2p3y" path="res://art/cartes_art/Chimiotherapie-rayon.svg" id="8_px430"]
 [ext_resource type="Texture2D" uid="uid://bfalxacs81lqh" path="res://art/Jeu/SVG-curseur-viseur/Cercle.svg" id="10_sowf5"]
+[ext_resource type="Texture2D" uid="uid://b61g0vpffn73" path="res://art/Image-ref.jpg" id="11_dolx6"]
+[ext_resource type="Texture2D" uid="uid://bsl04j1x4hd6n" path="res://art/fond_art/SVG-fond.svg" id="12_dpg47"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xc30g"]
 radius = 18.1108
@@ -75,6 +77,18 @@ texture = ExtResource("10_sowf5")
 [node name="HealthyCellDeathTimer" type="Timer" parent="Camera2D"]
 
 [node name="CancelCellSpawnTimer" type="Timer" parent="Camera2D"]
+
+[node name="Image-ref" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(560, 350)
+scale = Vector2(0.202778, 0.202778)
+texture = ExtResource("11_dolx6")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_dpg47")
+stretch_mode = 1
 
 [connection signal="body_shape_entered" from="TargetArea" to="." method="_on_target_area_body_shape_entered"]
 [connection signal="body_shape_exited" from="TargetArea" to="." method="_on_target_area_body_shape_exited"]

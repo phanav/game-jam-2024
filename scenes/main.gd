@@ -66,6 +66,14 @@ func spawn_cells(count, type):
 	for i in range(count):
 		var cell = load(scene_path).instantiate()
 		cell.global_position = Vector2(randi() % get_viewport().size.x, randi() % get_viewport().size.y)
+		cell.rotation = randf_range(0, 2 * PI)
+		
+		var scale = randf_range(0.2, 0.6)
+		cell.get_node('AnimatedSprite2D').scale.x = scale
+		cell.get_node('AnimatedSprite2D').scale.y = scale
+		cell.get_node('CollisionShape2D').scale.x = scale
+		cell.get_node('CollisionShape2D').scale.y = scale
+
 		add_child(cell)
 		if type == "cancer":
 			cancer_cells.append(cell)
