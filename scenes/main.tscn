@@ -1,11 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvxx3tmyt42jf"]
+[gd_scene load_steps=6 format=3 uid="uid://cvxx3tmyt42jf"]
 
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="1_eanxq"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_kbus1"]
 [ext_resource type="PackedScene" uid="uid://cujryyeuonm74" path="res://scenes/mob.tscn" id="2_63ahq"]
 [ext_resource type="PackedScene" uid="uid://cgf7feem3fyiw" path="res://scenes/carte.tscn" id="2_kg18q"]
 [ext_resource type="PackedScene" uid="uid://dd554e86wa4bs" path="res://scenes/cellule.tscn" id="3_idd7r"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_kbus1")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 5
