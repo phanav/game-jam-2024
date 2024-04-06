@@ -51,4 +51,7 @@ func spawn_cells(count, type):
 
 
 
+func utiliser():
+	pass
+
 

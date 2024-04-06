@@ -1,10 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cvxx3tmyt42jf"]
+[gd_scene load_steps=10 format=3 uid="uid://cvxx3tmyt42jf"]
 
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="1_eanxq"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_kbus1"]
-[ext_resource type="PackedScene" uid="uid://cujryyeuonm74" path="res://scenes/mob.tscn" id="2_63ahq"]
 [ext_resource type="Texture2D" uid="uid://7le8m08buqw6" path="res://art/cartes_art/Analyse.svg" id="3_gcepj"]
-[ext_resource type="PackedScene" uid="uid://dd554e86wa4bs" path="res://scenes/cellule.tscn" id="3_idd7r"]
 [ext_resource type="Texture2D" uid="uid://q6lw7x4cvukb" path="res://art/cartes_art/Analyse-rayon.svg" id="4_pfwcl"]
 [ext_resource type="Script" path="res://scenes/Carte1.gd" id="5_dnsih"]
 [ext_resource type="Texture2D" uid="uid://ykvulavcf2yu" path="res://art/cartes_art/Radiotherapie.svg" id="5_et70c"]
@@ -52,18 +50,3 @@ offset_bottom = 320.0
 scale = Vector2(0.12, 0.12)
 texture_normal = ExtResource("7_n40il")
 texture_hover = ExtResource("8_px430")
-
-[node name="Mob" parent="." instance=ExtResource("2_63ahq")]
-position = Vector2(550, 350)
-
-[node name="Mob2" parent="." instance=ExtResource("2_63ahq")]
-position = Vector2(200, 100)
-
-[node name="Cellule" parent="." instance=ExtResource("3_idd7r")]
-position = Vector2(950, 200)
-
-[node name="Cellule2" parent="." instance=ExtResource("3_idd7r")]
-position = Vector2(100, 580)
-
-[node name="Cellule3" parent="." instance=ExtResource("3_idd7r")]
-position = Vector2(1100, 550)
