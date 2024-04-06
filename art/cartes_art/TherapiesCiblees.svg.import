@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgs84tsjyh4br"
-path="res://.godot/imported/therapies-ciblees.svg-0b7fa5b2f6fae6efbfe4031f945f2840.ctex"
+uid="uid://ci782ustmth7n"
+path="res://.godot/imported/TherapiesCiblees.svg-ae3d6047c3313d0b561c79dba642173a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/cartes_art/therapies-ciblees.svg"
-dest_files=["res://.godot/imported/therapies-ciblees.svg-0b7fa5b2f6fae6efbfe4031f945f2840.ctex"]
+source_file="res://art/cartes_art/TherapiesCiblees.svg"
+dest_files=["res://.godot/imported/TherapiesCiblees.svg-ae3d6047c3313d0b561c79dba642173a.ctex"]
 
 [params]
 

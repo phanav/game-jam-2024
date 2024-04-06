@@ -1,5 +1,9 @@
+#CarteBombe correspond à la Chimiothérapie
+
 extends "res://scenes/Carte.gd"
 
+var rayon
+var thérapie = "Chimiothérapie"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
