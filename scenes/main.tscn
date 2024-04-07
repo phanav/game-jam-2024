@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://4vwi1pxcoomv" path="res://art/Jeu/SVG-curseur-viseur/Curseur-viseur.png" id="5_he8ly"]
 [ext_resource type="Texture2D" uid="uid://co00hni54of42" path="res://art/cartes_art/Chimiotherapie.svg" id="7_n40il"]
 [ext_resource type="Texture2D" uid="uid://bfalxacs81lqh" path="res://art/Jeu/SVG-curseur-viseur/Cercle.svg" id="10_sowf5"]
-[ext_resource type="PackedScene" uid="uid://dv11h1u5bygkx" path="res://components/health_bar.tscn" id="13_0kdhp"]
-[ext_resource type="PackedScene" uid="uid://d08qikcg18e7g" path="res://components/card.tscn" id="13_7c10m"]
+[ext_resource type="PackedScene" path="res://components/health_bar.tscn" id="13_0kdhp"]
+[ext_resource type="PackedScene" path="res://components/card.tscn" id="13_7c10m"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_kbus1")
@@ -85,7 +85,7 @@ texture_normal = ExtResource("7_n40il")
 [node name="HealthBar" parent="." instance=ExtResource("13_0kdhp")]
 
 [node name="HealthyCellDeathTimer" type="Timer" parent="."]
-wait_time = 2.0
+wait_time = 0.001
 autostart = true
 
 [node name="CancerCellSpawnTimer" type="Timer" parent="."]

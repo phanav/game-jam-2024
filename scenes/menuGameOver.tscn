@@ -1,0 +1,70 @@
+[gd_scene load_steps=5 format=3 uid="uid://ct4qowppfbjyu"]
+
+[ext_resource type="Script" path="res://scenes/menuGameOver.gd" id="1_mkagw"]
+[ext_resource type="Texture2D" uid="uid://bdms1xp8cpcmo" path="res://art/page_accueil_art/Fond-gameover.png" id="1_xb38j"]
+[ext_resource type="Texture2D" uid="uid://c6u2uc3scigln" path="res://art/page_accueil_art/Titre-gameover.png" id="2_ilmwn"]
+[ext_resource type="FontFile" uid="uid://dn28gkt3eu824" path="res://art/page_accueil_art/VarelaRound-Regular.ttf" id="3_xnqvf"]
+
+[node name="menuGameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mkagw")
+
+[node name="BackgroundGameOver" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 28.8
+anchor_bottom = 16.2
+offset_right = -1112.0
+offset_bottom = -608.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_xb38j")
+
+[node name="TitreGameOver" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.4
+anchor_top = 3.2
+anchor_right = 14.4
+anchor_bottom = 3.2
+offset_left = -352.0
+offset_top = -56.0
+offset_right = 811.0
+offset_bottom = 126.0
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_ilmwn")
+
+[node name="RejouerBouton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.4
+anchor_top = 10.0
+anchor_right = 14.4
+anchor_bottom = 10.0
+offset_left = -64.0
+offset_top = -24.0
+offset_right = 61.0
+offset_bottom = 24.0
+theme_override_fonts/font = ExtResource("3_xnqvf")
+theme_override_font_sizes/font_size = 24
+text = "Rejouer"
+
+[node name="RetourMenuBouton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.312
+anchor_top = 11.875
+anchor_right = 14.312
+anchor_bottom = 11.875
+offset_left = -148.48
+offset_top = -19.0
+offset_right = 148.52
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("3_xnqvf")
+theme_override_font_sizes/font_size = 23
+text = "Retour au menu principal"
+
+[connection signal="pressed" from="RejouerBouton" to="." method="_on_rejouer_bouton_pressed"]
+[connection signal="pressed" from="RetourMenuBouton" to="." method="_on_retour_menu_bouton_pressed"]
