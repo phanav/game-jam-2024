@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" path="res://scenes/CarteUnitaire.gd" id="1_cf1xu"]
 [ext_resource type="Texture2D" uid="uid://brjoscxqthawj" path="res://art/cartes_art/Immunotherapie.svg" id="1_miw8c"]
-[ext_resource type="Texture2D" uid="uid://b82xfy4osxgpr" path="res://art/cartes_art/Chirurgie.svg" id="1_nuese"]
-[ext_resource type="Texture2D" uid="uid://ykvulavcf2yu" path="res://art/cartes_art/RadioTherapie.svg" id="2_7nuvj"]
+[ext_resource type="Texture2D" uid="uid://ykvulavcf2yu" path="res://art/cartes_art/Radiotherapie.svg" id="2_7nuvj"]
 [ext_resource type="Texture2D" uid="uid://biwedj0pij8v1" path="res://art/cartes_art/TherapiesCiblees.svg" id="3_ia1fq"]
+[ext_resource type="Texture2D" uid="uid://s103b5bqel8b" path="res://art/Jeu/PNG-Cartes/Chirurgie.png" id="5_c1a5e"]
 
 [node name="CarteUnitaire" type="Control"]
 layout_mode = 3
@@ -39,4 +39,4 @@ layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(0.12, 0.12)
-texture = ExtResource("1_nuese")
+texture = ExtResource("5_c1a5e")

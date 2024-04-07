@@ -3,7 +3,7 @@ signal use_card(card_type, target_radius)
 
 
 var therapie = ["Chimiotherapie", "Immunotherapie", "Radiotherapie", "TherapieCiblee", "Chirurgie", "Analyse"]
-var textures = [preload("res://art/cartes_art/Chimiotherapie.svg"), preload("res://art/cartes_art/Immunotherapie.svg"), preload("res://art/cartes_art/Radiotherapie.svg"), preload("res://art/cartes_art/TherapiesCiblees.svg"), preload("res://art/cartes_art/Chirurgie.svg"), preload("res://art/cartes_art/Analyse.svg")]
+var textures = [preload("res://art/cartes_art/Chimiotherapie.png"), preload("res://art/cartes_art/Immunotherapie.png"), preload("res://art/cartes_art/Radiotherapie.png"), preload("res://art/cartes_art/TherapiesCiblees.png"), preload("res://art/cartes_art/Chirurgie.png"), preload("res://art/cartes_art/Analyse.png")]
 var hover_textures = [preload("res://art/cartes_art/Chimiotherapie-rayon.svg"), preload("res://art/cartes_art/Immunotherapie-rayon.svg"), preload("res://art/cartes_art/Radiotherapie-rayon.svg"), preload("res://art/cartes_art/TherapiesCiblees-rayon.svg"), preload("res://art/cartes_art/Chirurgie-rayon.svg"), preload("res://art/cartes_art/Analyse-rayon.svg")]
 var commandements_enum = ["all", "shield", "precoce", "mutateStar", "timed", "show"]
 var radius = [30.0, 3.0, 3.0, 3.0, 3.0, 3.0]
