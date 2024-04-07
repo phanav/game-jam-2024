@@ -101,20 +101,24 @@ func _on_cancer_cell_spawn_timer_timeout():
 	#if len(target_cell_rids) > 0:
 		#target_cell_rids.erase(body)
 
-func purge_cells(target_radius, cells):
+func purge_cells(card_type, target_radius, cells, isCancer):
 	var i = 0
 	while i < cells.size():
 		var cell = cells[i]
 		#print(target_radius)
 		if ($Camera.position.distance_to(cell.position) <= target_radius):
-			print("trouve")
-			remove_child(cells[i])
-			cells.remove_at(i)
+			if (isCancer and card_type != "Chimiotherapie"):
+				if (cell.is_matching_card(card_type)):
+					remove_child(cells[i])
+					cells.remove_at(i)
+			else:
+				remove_child(cells[i])
+				cells.remove_at(i)
 		i = i + 1
 
 func utiliser(card_type, target_radius):
-	purge_cells(target_radius, healthy_cells)
-	purge_cells(target_radius, cancer_cells)
+	purge_cells(card_type, target_radius, healthy_cells, false)
+	purge_cells(card_type, target_radius, cancer_cells, true)
 	$HealthBar.update_healthy_count(healthy_cells.size())
 
 func _on_card_1_use_card(card_type, target_radius):

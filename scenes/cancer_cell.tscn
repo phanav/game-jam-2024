@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cclr35o440n06"]
+[gd_scene load_steps=6 format=3 uid="uid://cclr35o440n06"]
 
+[ext_resource type="Script" path="res://scenes/cancer_cell.gd" id="1_kyv4g"]
 [ext_resource type="Texture2D" uid="uid://ypkyf3u7d2m7" path="res://art/cellules_art/Cellule-cancer.svg" id="1_wd7b4"]
+[ext_resource type="PackedScene" uid="uid://bkt2tgijxb027" path="res://components/AnalysisOverlay.tscn" id="3_vxcvh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a7gk6"]
 animations = [{
@@ -14,12 +16,13 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akhyn"]
-radius = 8.0
-height = 16.0
+radius = 12.0
+height = 32.0
 
 [node name="Mob" type="RigidBody2D"]
 collision_mask = 0
 gravity_scale = 0.0
+script = ExtResource("1_kyv4g")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -33,3 +36,5 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_akhyn")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="AnalysisOverlay" parent="." instance=ExtResource("3_vxcvh")]

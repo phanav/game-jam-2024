@@ -4,7 +4,11 @@ signal use_card(card_type, target_radius)
 var therapie = ["Chimiotherapie", "Immunotherapie", "Radiotherapie", "TherapieCiblee", "Chirurgie", "Analyse"]
 var textures = [preload("res://art/cartes_art/Chimiotherapie.svg"), preload("res://art/cartes_art/Immunotherapie.svg"), preload("res://art/cartes_art/Radiotherapie.svg"), preload("res://art/cartes_art/TherapiesCiblees.svg"), preload("res://art/cartes_art/Chirurgie.svg"), preload("res://art/cartes_art/Analyse.svg")]
 var hover_textures = [preload("res://art/cartes_art/Chimiotherapie-rayon.svg"), preload("res://art/cartes_art/Immunotherapie-rayon.svg"), preload("res://art/cartes_art/Radiotherapie-rayon.svg"), preload("res://art/cartes_art/TherapiesCiblees-rayon.svg"), preload("res://art/cartes_art/Chirurgie-rayon.svg"), preload("res://art/cartes_art/Analyse-rayon.svg")]
+var commandements_enum = ["all", "shield", "precoce", "mutateStar", "timed", "show"]
+var radius = [30.0, 3.0, 3.0, 3.0, 3.0, 3.0]
 
+var therapie_index
+var target_commandement
 var target_radius
 var current_therapie
 
@@ -30,14 +34,9 @@ func _on_button_pressed():
 
 func reset():
 	randomize()  # Initialiser le générateur de nombres aléatoires
-	var index = randi() % therapie.size()  # Générer un index aléatoire
-	self.texture_normal = textures[index]  # Sélectionner la texture correspondante
-	self.texture_hover = hover_textures[index]  # Assigner la texture hover correspondante
-	current_therapie = therapie[index]  # Stocker le type de thérapie actuel
-	set_target_radius()
-
-func set_target_radius():
-	if (current_therapie == "Chimiotherapie"):
-		target_radius = 30.0
-	else:
-		target_radius = 5.0
+	therapie_index = randi() % therapie.size()  # Générer un index aléatoire
+	self.texture_normal = textures[therapie_index]  # Sélectionner la texture correspondante
+	self.texture_hover = hover_textures[therapie_index]  # Assigner la texture hover correspondante
+	current_therapie = therapie[therapie_index]  # Stocker le type de thérapie actuel
+	target_radius = radius[therapie_index]
+	target_commandement = commandements_enum[therapie_index]
