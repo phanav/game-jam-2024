@@ -13,12 +13,10 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akhyn"]
-radius = 7.99995
-height = 15.9999
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_57car"]
+size = Vector2(29.9999, 32.0001)
 
 [node name="Mob" type="RigidBody2D"]
-collision_mask = 0
 gravity_scale = 0.0
 metadata/_edit_group_ = true
 
@@ -29,7 +27,8 @@ sprite_frames = SubResource("SpriteFrames_a7gk6")
 animation = &"walk"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3.35772e-07)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_akhyn")
+shape = SubResource("RectangleShape2D_57car")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

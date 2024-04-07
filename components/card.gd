@@ -39,7 +39,7 @@ func _on_button_pressed():
 
 func _on_button_focus_entered():
 	var tween = create_tween()
-	tween.tween_property(self, "position", fixed_pos - Vector2(0, 40), 0.25).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "position", fixed_pos - Vector2(0, 45), 0.25).set_trans(Tween.TRANS_CUBIC)
 
 func _on_button_focus_exited():
 	var tween = create_tween()

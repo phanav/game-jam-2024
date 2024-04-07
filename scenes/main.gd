@@ -64,13 +64,13 @@ func spawn_cells(count, type):
 		cell.global_position = Vector2(randi() % get_viewport().size.x, randi() % get_viewport().size.y)
 		var rotation = randf_range(0, 2 * PI)
 		cell.rotation = rotation
-		
-		var scale = randf_range(0.2, 0.5)
-		cell.get_node('AnimatedSprite2D').scale.x = scale
-		cell.get_node('AnimatedSprite2D').scale.y = scale
-		cell.get_node('CollisionShape2D').scale.x = scale
-		cell.get_node('CollisionShape2D').scale.y = scale
-		
+
+		var scale = randf_range(0.75, 1.5)
+		cell.get_node('AnimatedSprite2D').scale.x *= scale
+		cell.get_node('AnimatedSprite2D').scale.y *= scale
+		cell.get_node('CollisionShape2D').scale.x *= scale
+		cell.get_node('CollisionShape2D').scale.y *= scale
+
 		add_child(cell)
 		if type == "cancer":
 			$SpawnCancer.play() # Play the cancer cell spawn sound

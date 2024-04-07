@@ -12,6 +12,10 @@ var commandements = []
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	commandements.append(commandements_enum[randi() % commandements_enum.size()])
+	if (randi() % 2 == 0):
+		commandements.append(commandements_enum[randi() % commandements_enum.size()])
+	if (randi() % 3 == 0):
+		commandements.append(commandements_enum[randi() % commandements_enum.size()])
 	$AnalysisOverlay.display_commandements(commandements)
 	# print($AnalysisOverlay.rotation)
 	# $AnalysisOverlay.rotation = 0
