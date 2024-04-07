@@ -14,7 +14,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akhyn"]
-radius = 7.99997
+radius = 7.99995
 height = 15.9999
 
 [node name="Mob" type="RigidBody2D"]

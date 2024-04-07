@@ -4,6 +4,12 @@ extends Node
 var healthy_cells = []
 var cancer_cells = []
 
+var healthy_cell_rids = []
+var cancer_cell_rids = []
+
+var target_radius = 20
+var target_cell_rids = []
+
 var cancer_spawning_speed = 2
 
 var commandement = ["all", "shield", "precoce", "mutateStar", "timed", "show"]
@@ -54,11 +60,21 @@ func spawn_cells(count, type):
 	for i in range(count):
 		var cell = load(scene_path).instantiate()
 		cell.global_position = Vector2(randi() % get_viewport().size.x, randi() % get_viewport().size.y)
+		cell.rotation = randf_range(0, 2 * PI)
+		
+		var scale = randf_range(0.2, 0.5)
+		cell.get_node('AnimatedSprite2D').scale.x = scale
+		cell.get_node('AnimatedSprite2D').scale.y = scale
+		cell.get_node('CollisionShape2D').scale.x = scale
+		cell.get_node('CollisionShape2D').scale.y = scale
+
 		add_child(cell)
 		if type == "cancer":
 			cancer_cells.append(cell)
+			cancer_cell_rids.append(cell.get_rid())
 		else:
 			healthy_cells.append(cell)
+			healthy_cell_rids.append(cell.get_rid())
 
 #func _on_TargetArea_area_entered(area):
 	#print("Area entered: " + area.name)
