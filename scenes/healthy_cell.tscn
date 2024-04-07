@@ -1,12 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://c5i154wmmnf1l"]
 
-[ext_resource type="Texture2D" uid="uid://b8rc0gw2opjye" path="res://art/cellules_art/Cellule-saine.svg" id="1_osj0y"]
+[ext_resource type="Texture2D" uid="uid://csnyanfgj1kap" path="res://art/Jeu/SVG-cellules/Cellules-bleu-8.png" id="1_pvq6j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a7gk6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_osj0y")
+"texture": ExtResource("1_pvq6j")
 }],
 "loop": true,
 "name": &"walk",

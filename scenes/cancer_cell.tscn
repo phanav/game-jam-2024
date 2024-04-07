@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://cclr35o440n06"]
 
 [ext_resource type="Script" path="res://scenes/cancer_cell.gd" id="1_kyv4g"]
-[ext_resource type="Texture2D" uid="uid://ypkyf3u7d2m7" path="res://art/cellules_art/Cellule-cancer.svg" id="1_wd7b4"]
+[ext_resource type="Texture2D" uid="uid://bwvktdpt1ec75" path="res://art/Jeu/SVG-cellules/Cellules-rouge-8.png" id="2_g2i1e"]
 [ext_resource type="PackedScene" uid="uid://bkt2tgijxb027" path="res://components/AnalysisOverlay.tscn" id="3_vxcvh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a7gk6"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_wd7b4")
+"texture": ExtResource("2_g2i1e")
 }],
 "loop": true,
 "name": &"walk",
