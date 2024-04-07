@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://c3eq8t7184vd"]
+[gd_scene load_steps=5 format=3 uid="uid://c3eq8t7184vd"]
 
 [ext_resource type="Script" path="res://scenes/menuDemarrer.gd" id="1_edckl"]
-[ext_resource type="Texture2D" uid="uid://bsl04j1x4hd6n" path="res://art/fond_art/SVG-fond.svg" id="2_6vrvr"]
+[ext_resource type="Texture2D" uid="uid://ds3n5klwdr4d1" path="res://art/page_accueil_art/Fond.png" id="2_gl4bg"]
+[ext_resource type="Texture2D" uid="uid://cra82i8rpgcwk" path="res://art/page_accueil_art/Titre.png" id="3_iko7s"]
+[ext_resource type="FontFile" uid="uid://dn28gkt3eu824" path="res://art/page_accueil_art/VarelaRound-Regular.ttf" id="3_itxui"]
 
 [node name="MenuDemarrer" type="Control"]
 layout_mode = 3
@@ -22,7 +24,21 @@ anchor_bottom = 16.2
 offset_right = 768.0
 offset_bottom = 432.0
 scale = Vector2(0.6, 0.6)
-texture = ExtResource("2_6vrvr")
+texture = ExtResource("2_gl4bg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 14.4
+anchor_top = 4.0
+anchor_right = 14.4
+anchor_bottom = 4.0
+offset_left = -128.0
+offset_top = -112.0
+offset_right = 385.0
+offset_bottom = 334.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_iko7s")
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 1
@@ -38,6 +54,7 @@ offset_bottom = 6.99991
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(1.6, 1.6)
+theme_override_fonts/font = ExtResource("3_itxui")
 text = "Démarrer"
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
