@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://dv11h1u5bygkx"]
+[gd_scene load_steps=2 format=3 uid="uid://550h52u0kely"]
 
 [ext_resource type="Script" path="res://components/health_bar.gd" id="1_uusnm"]
 
@@ -9,4 +9,4 @@ script = ExtResource("1_uusnm")
 offset_right = 40.0
 offset_bottom = 23.0
 theme_override_font_sizes/font_size = 32
-text = "0"
+text = "100"

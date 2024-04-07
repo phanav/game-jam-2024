@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ct4qowppfbjyu"]
+[gd_scene load_steps=6 format=3 uid="uid://ct4qowppfbjyu"]
 
 [ext_resource type="Script" path="res://scenes/menuGameOver.gd" id="1_mkagw"]
 [ext_resource type="Texture2D" uid="uid://bdms1xp8cpcmo" path="res://art/page_accueil_art/Fond-gameover.png" id="1_xb38j"]
 [ext_resource type="Texture2D" uid="uid://c6u2uc3scigln" path="res://art/page_accueil_art/Titre-gameover.png" id="2_ilmwn"]
 [ext_resource type="FontFile" uid="uid://dn28gkt3eu824" path="res://art/page_accueil_art/VarelaRound-Regular.ttf" id="3_xnqvf"]
+[ext_resource type="AudioStream" uid="uid://bo0twcj3ygfh1" path="res://art/Sons/Aie.wav" id="5_sr8x3"]
 
 [node name="menuGameOver" type="Control"]
 layout_mode = 3
@@ -65,6 +66,9 @@ offset_bottom = 19.0
 theme_override_fonts/font = ExtResource("3_xnqvf")
 theme_override_font_sizes/font_size = 23
 text = "Retour au menu principal"
+
+[node name="GameOverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_sr8x3")
 
 [connection signal="pressed" from="RejouerBouton" to="." method="_on_rejouer_bouton_pressed"]
 [connection signal="pressed" from="RetourMenuBouton" to="." method="_on_retour_menu_bouton_pressed"]

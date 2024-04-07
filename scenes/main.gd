@@ -35,6 +35,7 @@ func _ready():
 	spawn_cells(100, "healthy")
 	# vitesse d'apparition des cellules cancers
 	$CancerCellSpawnTimer.wait_time = cancer_spawning_speed
+	$MusicBoucle.play()
 
 	# https://gamedev.stackexchange.com/questions/207387/how-to-get-nested-child-node-without-using-full-path-in-godot
 	#$TargetArea.radius = target_radius
@@ -72,6 +73,7 @@ func spawn_cells(count, type):
 		
 		add_child(cell)
 		if type == "cancer":
+			$SpawnCancer.play() # Play the cancer cell spawn sound
 			# print(cell.rotation, ';', cell.get_node('AnalysisOverlay').rotation)
 			cell.get_node('AnalysisOverlay').rotation  -= rotation
 			# print(cell.rotation, ';', cell.get_node('AnalysisOverlay').rotation)
@@ -97,6 +99,7 @@ func _on_healthy_cell_death_timer_timeout():
 		get_tree().root.add_child(game_over_scene)
 		get_tree().current_scene.queue_free()
 		get_tree().set_current_scene(game_over_scene)
+		$MusicBoucle.stop()
 
 # apparition des cellules cancers
 func _on_cancer_cell_spawn_timer_timeout():
@@ -139,6 +142,8 @@ func purge_cells(card_type, target_radius, cells, isCancer):
 					remove_child(cells[i])
 					cells.remove_at(i)
 			else:
+				if (card_type == "Chimiotherapie"):
+					$ChimioSon.play()
 				remove_child(cells[i])
 				cells.remove_at(i)
 		#if (card_type == "Chirurgie"):
