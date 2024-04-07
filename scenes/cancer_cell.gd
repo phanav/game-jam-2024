@@ -13,7 +13,9 @@ var commandements = []
 func _ready():
 	commandements.append(commandements_enum[randi() % commandements_enum.size()])
 	$AnalysisOverlay.display_commandements(commandements)
-	pass # Replace with function body.
+	# print($AnalysisOverlay.rotation)
+	# $AnalysisOverlay.rotation = 0
+	# pass # Replace with function body.
 
 func _is_in(list, item):
 	return list.count(item) > 0
