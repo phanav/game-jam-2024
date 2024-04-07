@@ -69,7 +69,7 @@ func spawn_cells(count, type):
 		cell.get_node('AnimatedSprite2D').scale.y = scale
 		cell.get_node('CollisionShape2D').scale.x = scale
 		cell.get_node('CollisionShape2D').scale.y = scale
-
+		
 		add_child(cell)
 		if type == "cancer":
 			# print(cell.rotation, ';', cell.get_node('AnalysisOverlay').rotation)
@@ -86,11 +86,17 @@ func spawn_cells(count, type):
 
 # mort des cellules saines
 func _on_healthy_cell_death_timer_timeout():
-	var index = randi() % healthy_cells.size()
-	remove_child(healthy_cells[index])
-	healthy_cells.remove_at(index)
-	#healthy_cell_rids.remove_at(index)
-	$HealthBar.update_healthy_count(healthy_cells.size())
+	if healthy_cells.size() > 0:
+		var index = randi() % healthy_cells.size()
+		remove_child(healthy_cells[index])
+		healthy_cells.remove_at(index)
+		$HealthBar.update_healthy_count(healthy_cells.size())
+	else:
+		# Game over
+		var game_over_scene = load("res://scenes/menuGameOver.tscn").instantiate()
+		get_tree().root.add_child(game_over_scene)
+		get_tree().current_scene.queue_free()
+		get_tree().set_current_scene(game_over_scene)
 
 # apparition des cellules cancers
 func _on_cancer_cell_spawn_timer_timeout():

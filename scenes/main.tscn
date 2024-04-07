@@ -85,7 +85,6 @@ texture_normal = ExtResource("7_n40il")
 [node name="HealthBar" parent="." instance=ExtResource("13_0kdhp")]
 
 [node name="HealthyCellDeathTimer" type="Timer" parent="."]
-wait_time = 0.001
 autostart = true
 
 [node name="CancerCellSpawnTimer" type="Timer" parent="."]

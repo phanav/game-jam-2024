@@ -15,6 +15,10 @@ run/main_scene="res://scenes/menuDemarrer.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/resizable=false
+
 [dotnet]
 
 project/assembly_name="Game_jam_2024"
