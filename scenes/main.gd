@@ -106,7 +106,7 @@ func purge_cells(card_type, target_radius, cells, isCancer):
 	while i < cells.size():
 		var cell = cells[i]
 		var dist = $Camera.position.distance_to(cell.position)
-		if (not isCancer and dist <= target_radius):
+		if (dist <= target_radius):
 			if (isCancer and card_type != "Chimiotherapie"):
 				if (cell.is_matching_card(card_type)):
 					remove_child(cells[i])
