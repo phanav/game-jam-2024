@@ -1,6 +1,5 @@
-# Carte1.gd
 extends TextureButton
-signal use_card1(card_type, target_radius)
+signal use_card(card_type, target_radius)
 
 var therapie = ["Chimiotherapie", "Immunotherapie", "Radiotherapie", "TherapieCiblee", "Chirurgie", "Analyse"]
 var textures = [preload("res://art/cartes_art/Chimiotherapie.svg"), preload("res://art/cartes_art/Immunotherapie.svg"), preload("res://art/cartes_art/Radiotherapie.svg"), preload("res://art/cartes_art/TherapiesCiblees.svg"), preload("res://art/cartes_art/Chirurgie.svg"), preload("res://art/cartes_art/Analyse.svg")]
@@ -18,6 +17,7 @@ var current_therapie
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	connect("pressed", Callable(self, "_on_button_pressed"))  # Connecter le signal pressed à la fonction _on_button_pressed
 	reset()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -25,7 +25,7 @@ func _process(delta):
 	pass
 
 func _on_button_pressed():
-	emit_signal("use_card1", current_therapie, target_radius)
+	emit_signal("use_card", current_therapie, target_radius)
 	reset()
 
 func reset():

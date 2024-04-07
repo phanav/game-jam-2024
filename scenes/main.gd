@@ -117,9 +117,11 @@ func utiliser(card_type, target_radius):
 	purge_cells(target_radius, cancer_cells)
 	$HealthBar.update_healthy_count(healthy_cells.size())
 
-func _on_carte_1_use_card_1(card_type, target_radius):
+func _on_card_1_use_card(card_type, target_radius):
 	utiliser(card_type, target_radius)
-func _on_carte_2_use_card_2(card_type, target_radius):
+
+func _on_card_2_use_card(card_type, target_radius):
 	utiliser(card_type, target_radius)
-func _on_carte_3_use_card_3(card_type, target_radius):
+
+func _on_card_3_use_card(card_type, target_radius):
 	utiliser(card_type, target_radius)
