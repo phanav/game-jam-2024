@@ -12,8 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://deimy7gll2p3y" path="res://art/cartes_art/Chimiotherapie-rayon.svg" id="8_px430"]
 [ext_resource type="Texture2D" uid="uid://bfalxacs81lqh" path="res://art/Jeu/SVG-curseur-viseur/Cercle.svg" id="10_sowf5"]
 [ext_resource type="Script" path="res://scenes/TargetRef.gd" id="12_ad4bp"]
-[ext_resource type="PackedScene" uid="uid://dv11h1u5bygkx" path="res://components/health_bar.tscn" id="13_0kdhp"]
-[ext_resource type="PackedScene" uid="uid://d08qikcg18e7g" path="res://components/card.tscn" id="13_7c10m"]
+[ext_resource type="PackedScene" path="res://components/health_bar.tscn" id="13_0kdhp"]
+[ext_resource type="PackedScene" path="res://components/card.tscn" id="13_7c10m"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_kbus1")
