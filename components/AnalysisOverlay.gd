@@ -12,3 +12,9 @@ func _process(delta):
 func display_commandements(commandements):
 	for commandement in commandements:
 		$Label.text += commandement
+
+func toggle_visibility():
+	visible = true
+	$DisplayTimer.start()
+	await $DisplayTimer.timeout
+	visible = false

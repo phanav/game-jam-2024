@@ -24,3 +24,6 @@ func is_matching_card(card_type):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func toggle_overlay():
+	$AnalysisOverlay.toggle_visibility()

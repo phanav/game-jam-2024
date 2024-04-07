@@ -105,8 +105,8 @@ func purge_cells(card_type, target_radius, cells, isCancer):
 	var i = 0
 	while i < cells.size():
 		var cell = cells[i]
-		#print(target_radius)
-		if ($Camera.position.distance_to(cell.position) <= target_radius):
+		var dist = $Camera.position.distance_to(cell.position)
+		if (not isCancer and dist <= target_radius):
 			if (isCancer and card_type != "Chimiotherapie"):
 				if (cell.is_matching_card(card_type)):
 					remove_child(cells[i])
@@ -114,11 +114,19 @@ func purge_cells(card_type, target_radius, cells, isCancer):
 			else:
 				remove_child(cells[i])
 				cells.remove_at(i)
+		#if (card_type == "Chirurgie"):
+			#var j = randi() % healthy_cells.size()
+			#remove_child(healthy_cells[i])
+			#healthy_cells.remove_at(i)
 		i = i + 1
 
 func utiliser(card_type, target_radius):
-	purge_cells(card_type, target_radius, healthy_cells, false)
-	purge_cells(card_type, target_radius, cancer_cells, true)
+	if (card_type == "Analyse"):
+		for cell in cancer_cells:
+			cell.toggle_overlay()
+	else:
+		purge_cells(card_type, target_radius, healthy_cells, false)
+		purge_cells(card_type, target_radius, cancer_cells, true)
 	$HealthBar.update_healthy_count(healthy_cells.size())
 
 func _on_card_1_use_card(card_type, target_radius):
