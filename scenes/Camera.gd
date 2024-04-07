@@ -26,3 +26,17 @@ func _process(delta):
 	position += movement
 	position.x = clamp(position.x, 0, screen_size.x)
 	position.y = clamp(position.y, 0, screen_size.y)
+
+
+func _on_tutorial_button_pressed():
+	#pass # Replace with function body.
+	$Tutorial.visible = true
+	$TutorialButton.visible = false
+	$CloseTutorialButton.visible = true
+
+
+func _on_close_tutorial_button_pressed():
+	#pass # Replace with function body.
+	$Tutorial.visible = false
+	$CloseTutorialButton.visible = false
+	$TutorialButton.visible = true
