@@ -1,12 +1,43 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkt2tgijxb027"]
+[gd_scene load_steps=6 format=3 uid="uid://bkt2tgijxb027"]
 
 [ext_resource type="Script" path="res://components/AnalysisOverlay.gd" id="1_7h7pq"]
+[ext_resource type="Texture2D" uid="uid://cbcc444qae6jy" path="res://art/Jeu/Caractéristique/immunite.png" id="2_o2wol"]
+[ext_resource type="Texture2D" uid="uid://1nybc5votnxb" path="res://art/Jeu/Caractéristique/stade-precoce.png" id="3_2l6g3"]
+[ext_resource type="Texture2D" uid="uid://sq3cdgdjhoit" path="res://art/Jeu/Caractéristique/division.png" id="4_onkq6"]
+[ext_resource type="Texture2D" uid="uid://bj074lhpdoirj" path="res://art/Jeu/Caractéristique/mutation.png" id="5_vela5"]
 
 [node name="AnalysisOverlay" type="CanvasGroup"]
 visible = false
 script = ExtResource("1_7h7pq")
 
+[node name="ImmuneSprite" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_o2wol")
+offset = Vector2(-118, -64)
+
+[node name="PrecoceSprite" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_2l6g3")
+offset = Vector2(-32, -64)
+
+[node name="LongdevSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(4, 0)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_onkq6")
+offset = Vector2(32, -64)
+
+[node name="MutatedSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(8, 0)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_vela5")
+offset = Vector2(96, -64)
+
 [node name="Label" type="Label" parent="."]
+visible = false
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -15,5 +46,5 @@ offset_right = 1.0
 grow_vertical = 0
 
 [node name="DisplayTimer" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 30.0
 one_shot = true

@@ -12,7 +12,8 @@ var target_cell_rids = []
 
 var cancer_spawning_speed = 2
 
-var commandement = ["all", "shield", "precoce", "mutateStar", "timed", "show"]
+#var commandement = ["all", "shield", "precoce", "mutateStar", "timed", "show"]
+var commandement = ["all", "shield", "precoce", "mutateStar", "timed"]
 # all = efficace contre toutes les cellules
 # shield = cellules qui échappent à la mort
 # precoce = cellules aux stades précoces
@@ -71,9 +72,9 @@ func spawn_cells(count, type):
 
 		add_child(cell)
 		if type == "cancer":
-			print(cell.rotation, ';', cell.get_node('AnalysisOverlay').rotation)
+			# print(cell.rotation, ';', cell.get_node('AnalysisOverlay').rotation)
 			cell.get_node('AnalysisOverlay').rotation  -= rotation
-			print(cell.rotation, ';', cell.get_node('AnalysisOverlay').rotation)
+			# print(cell.rotation, ';', cell.get_node('AnalysisOverlay').rotation)
 			cancer_cells.append(cell)
 			cancer_cell_rids.append(cell.get_rid())
 		else:

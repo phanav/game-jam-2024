@@ -12,6 +12,15 @@ func _process(delta):
 func display_commandements(commandements):
 	for commandement in commandements:
 		$Label.text += commandement
+				# print($Label.visible)
+		if commandement == "shield" or commandement ==  "all": 
+			$ImmuneSprite.visible = true
+		if commandement == "precoce" or commandement ==  "all":
+			$PrecoceSprite.visible = true
+		if commandement == "mutateStar" or commandement ==  "all":
+			$MutatedSprite.visible = true
+		if commandement ==	"timed" or commandement ==  "all":
+			$LongdevSprite.visible = true
 
 func toggle_visibility():
 	visible = true
